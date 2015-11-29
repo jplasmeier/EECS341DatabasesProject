@@ -1,0 +1,99 @@
+USE eecs341_test;
+
+CREATE TABLE  `User` (
+  `user_id` INT NOT NULL,
+  `username` VARCHAR(200) NOT NULL,
+  `password` VARCHAR(512) NOT NULL,
+  `email` VARCHAR(200) NOT NULL,
+  `real_name` VARCHAR(200) NULL,
+  `balance` DECIMAL(20) NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC));
+
+CREATE TABLE  `Album` (
+  `alb_id` INT NOT NULL,
+  `title` VARCHAR(500) NOT NULL,
+  `artwork_file_location` VARCHAR(500) NULL,
+  `run_time` VARCHAR(100) NULL,
+  PRIMARY KEY (`alb_id`),
+  UNIQUE INDEX `alb_id_UNIQUE` (`alb_id` ASC));
+
+CREATE TABLE  `Track` (
+  `t_id` INT NOT NULL,
+  `title` VARCHAR(500) NOT NULL,
+  `file_location` VARCHAR(500) NOT NULL,
+  `run_time` INT NULL,
+  `genre` VARCHAR(45) NULL,
+  PRIMARY KEY (`t_id`),
+  UNIQUE INDEX `t_id_UNIQUE` (`t_id` ASC));
+
+CREATE TABLE  `Artist` (
+  `artist_id` INT NOT NULL,
+  `name` VARCHAR(500) NOT NULL,
+  `year_formed` INT NULL,
+  `origin` VARCHAR(500) NULL,
+  `genre` VARCHAR(45) NULL,
+  `isBand` BINARY NULL,
+  PRIMARY KEY (`artist_id`),
+  UNIQUE INDEX `artist_id_UNIQUE` (`artist_id` ASC));
+
+CREATE TABLE  `Musician` (
+  `musician_id` INT NOT NULL,
+  `name` VARCHAR(500) NOT NULL,
+  `birth_date` DATETIME NULL,
+  `origin` VARCHAR(500) NULL,
+  `instrument(s)` VARCHAR(500) NULL,
+  PRIMARY KEY (`musician_id`),
+  UNIQUE INDEX `musician_id_UNIQUE` (`musician_id` ASC));
+
+CREATE TABLE  `Label` (
+  `label_id` INT NOT NULL,
+  `name` VARCHAR(500) NOT NULL,
+  `address` VARCHAR(500) NULL,
+  `genre` VARCHAR(45) NULL,
+  PRIMARY KEY (`label_id`),
+  UNIQUE INDEX `label_id_UNIQUE` (`label_id` ASC));
+
+CREATE TABLE  `Playlist` (
+  `playlist_id` INT NOT NULL,
+  `name` VARCHAR(500) NOT NULL,
+  `description` VARCHAR(500) NULL,
+  `isPrivate` BINARY NULL,
+  PRIMARY KEY (`playlist_id`),
+  UNIQUE INDEX `playlist_id_UNIQUE` (`playlist_id` ASC));
+
+
+CREATE TABLE  `owns_playlist` (
+  `user_id` INT NOT NULL,
+  `playlist_id` INT NOT NULL,
+  PRIMARY KEY (`user_id`),
+  INDEX `playlist_id_idx` (`playlist_id` ASC),
+  CONSTRAINT `user_id`
+	FOREIGN KEY (`user_id`)
+	REFERENCES  `User` (`user_id`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+  CONSTRAINT `playlist_id`
+	FOREIGN KEY (`playlist_id`)
+	REFERENCES  `Playlist` (`playlist_id`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION);
+
+CREATE TABLE  `is_in_album` (
+  `track_id` INT NOT NULL,
+  `album_id` INT NOT NULL,
+  PRIMARY KEY (`track_id`),
+  INDEX `album_id_idx` (`album_id` ASC),
+  CONSTRAINT `track_id`
+	FOREIGN KEY (`track_id`)
+	REFERENCES  `Track` (`t_id`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+  CONSTRAINT `album_id`
+	FOREIGN KEY (`album_id`)
+	REFERENCES  `Album` (`alb_id`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION);
+
