@@ -1,0 +1,9 @@
+USE 'eecs341_test';
+
+INSERT INTO Musician VALUES ('1', 'Zachary Cole Smith', '1984-11-07', 'New York', 'Vocals, Guitar, Bass, Drums');
+INSERT INTO Musician VALUES ('2', 'Devin Ruben Perez', '1984-12-23', 'New York', 'Bass');
+INSERT INTO Musician VALUES ('3', 'Roger Wootton', '1950-05-12', 'Kent', 'Vocals, Guitar');
+INSERT INTO Musician VALUES ('4', 'Glenn Goring', '1949-06-17', 'Kent', 'Guitar');
+
+
+

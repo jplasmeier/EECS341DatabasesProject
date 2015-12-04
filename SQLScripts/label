@@ -1,0 +1,10 @@
+USE 'eecs341_test';
+
+INSERT INTO Label VALUES ('1', 'Captured Tracks', 'Brooklyn', 'Indie Pop');
+INSERT INTO Label VALUES ('2', 'Tough Love Records', 'London', 'Post-Punk');
+INSERT INTO Label VALUES ('3', 'Dawn Records', 'Cambridge', 'Pop');
+INSERT INTO Label VALUES ('4', 'RCA Records', 'New York', 'Various');
+INSERT INTO Label VALUES ('5', 'Ipecac Recordings', 'California', 'Metal');
+
+
+

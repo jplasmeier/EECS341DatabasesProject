@@ -1,0 +1,32 @@
+USE 'eecs341_test';
+
+INSERT INTO Musician VALUES ('1', 'Zachary Cole Smith', '1984-11-07', 'New York', 'Vocals, Guitar');
+INSERT INTO Musician VALUES ('2', 'Devin Ruben Perez', '1984-12-23', 'New York', 'Bass');
+INSERT INTO Musician VALUES ('3', 'Colby Hewitt III', '1983-11-22', 'New York', 'Drums');
+INSERT INTO Musician VALUES ('4', 'Andrew Bailey', '1984-12-23', 'Mexico', 'Guitar');
+INSERT INTO Musician VALUES ('5', 'David VanDewater', '1983-02-13', 'Phialdelphia', 'Guitar');
+INSERT INTO Musician VALUES ('6', 'Alexander Hobson', '1985-04-04', 'Leeds', 'Vocals, Bass');
+INSERT INTO Musician VALUES ('7', 'Steve Finn', '1982-09-21', 'Leeds', 'Drums');
+INSERT INTO Musician VALUES ('8', 'Roger Wootton', '1950-05-12', 'Kent', 'Vocals, Guitar');
+INSERT INTO Musician VALUES ('9', 'Glenn Goring', '1949-06-17', 'Kent', 'Guitar');
+INSERT INTO Musician VALUES ('10', 'Andy Hellaby', '1947-05-13', 'Leeds', 'Bass');
+INSERT INTO Musician VALUES ('11', 'Colin Pearson', '1948-01-12', 'London', 'Violin, Viola');
+INSERT INTO Musician VALUES ('12', 'Rob Young', '1951-04-27', 'Scotland', 'Flute, Oboe, Hand Drums');
+INSERT INTO Musician VALUES ('13', 'Michael Archer', '1974-02-11', 'Richmond', 'Vocals, Piano, Keyboards');
+INSERT INTO Musician VALUES ('14', 'James Kaye', '1979-07-12', 'Bluefield', 'Guitar, Percussion');
+INSERT INTO Musician VALUES ('15', 'Eric Clafton', '1976-05-27', 'Richmond', 'Guitar');
+INSERT INTO Musician VALUES ('16', 'James Rickey', '1975-03-31', 'Derby', 'Bass');
+INSERT INTO Musician VALUES ('17', 'Izzy Singer', '1975-12-13', 'Ashland', 'Vocals');
+INSERT INTO Musician VALUES ('18', 'Paul Rosenfelt', '1972-08-16', 'Ashville', 'Drums');
+INSERT INTO Musician VALUES ('19', 'Ed Kennedy', '1970-04-19', 'Candon', 'Flute');
+INSERT INTO Musician VALUES ('20', 'Mark Moon', '1971-02-11', 'Richmond', 'Keyboards');
+INSERT INTO Musician VALUES ('21', 'David Bowie', '1947-01-08', 'London', 'Vocals, Saxophone, Guitar');
+INSERT INTO Musician VALUES ('22', 'Grace Slick', '1939-08-30', 'Highland Park', 'Vocals, Piano');
+INSERT INTO Musician VALUES ('23', 'Paul Kantner', '1939-07-03', '', 'Vocals, Guitar');
+INSERT INTO Musician VALUES ('24', 'Jorma Kaukonen', '1941-11-27', 'Washington Park', 'Vocals, Sitar');
+INSERT INTO Musician VALUES ('25', 'Jack Cassady', '1940-06-15', 'Washington D.C.', 'Bass');
+INSERT INTO Musician VALUES ('26', 'Marty Balin', '1939-08-30', 'Washington D.C.', 'Drums');
+INSERT INTO Musician VALUES ('27', 'Teri Suarez', '1989-10-16', '', 'Vocals, Guitar');
+INSERT INTO Musician VALUES ('28', 'Chris Common', '1987-08-19', '', 'Drums');
+INSERT INTO Musician VALUES ('29', 'Jamie Aaron Aux', '1988-05-12', '', 'Bass');
+

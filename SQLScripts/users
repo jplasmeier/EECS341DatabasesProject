@@ -1,0 +1,12 @@
+USE 'eecs341_test';
+
+INSERT INTO User VALUES ('2', 'quietude', 'this should be encrypted', 'quiet@gmail.com', 'Mark Sipman', '59.00');
+INSERT INTO User VALUES ('3', 'sylvian_screen', 'this should really be encrypted', 'sscren@gmail.com', 'James Edward', '500.00');
+INSERT INTO User VALUES ('4', 'barkbelow', 'this should really be encrypted', 'barknel@gmail.com', 'Pat Tilman', '35.00');
+INSERT INTO User VALUES ('5', 'mystery024', 'this should really be encrypted', 'myster@gmail.com', 'Monica Three', '3.00');
+INSERT INTO User VALUES ('6', 'cannedgoods', 'this should really be encrypted', 'cans@gmail.com', 'Mark Mallot', '0.00');
+INSERT INTO User VALUES ('7', 'highwaymen', 'this should really be encrypted', 'high@gmail.com', 'Sigmund Freud', '1.00');
+INSERT INTO User VALUES ('8', 'lebronjames', 'this should really be encrypted', 'lbjbball@gmail.com', 'Al Abscer', '3.00');
+INSERT INTO User VALUES ('9', 'DrPhilCollins', 'this prolly be encrypted', 'drums@gmail.com', 'Make ThisUp', '52.00');
+INSERT INTO User VALUES ('10', 'MrMeekseeks', 'LOOK AT ME!!', 'winsow@gmail.com', 'Ethan Four', '15.00');
+

@@ -1,0 +1,13 @@
+USE eecs341_test;
+
+ALTER TABLE `release`
+ADD COLUMN `artist_id` INT NOT NULL AFTER `label_id`,
+ADD COLUMN `date` DATETIME NULL AFTER `artist_id`,
+ADD INDEX `fk_release_3_idx` (`artist_id` ASC);
+ALTER TABLE `release`
+ADD CONSTRAINT `fk_release_3`
+  FOREIGN KEY (`artist_id`)
+  REFERENCES `Artist` (`artist_id`)
+  ON DELETE CASCADE
+  ON UPDATE NO ACTION;
+

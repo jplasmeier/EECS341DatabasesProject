@@ -1,0 +1,89 @@
+USE 'eecs341_test';
+
+CREATE TABLE `is_on_playlist` (
+  `playlist_id` INT NOT NULL,
+  `track_id` INT NOT NULL,
+  `rating` INT NULL,
+  PRIMARY KEY (`playlist_id`),
+  INDEX `track_idx` (`track_id` ASC),
+  CONSTRAINT `playlist`
+	FOREIGN KEY (`playlist_id`)
+	REFERENCES `Playlist` (`playlist_id`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+  CONSTRAINT `track`
+	FOREIGN KEY (`track_id`)
+	REFERENCES `Track` (`t_id`)
+	ON DELETE CASCADE
+	ON UPDATE NO ACTION);
+
+CREATE TABLE `performs` (
+  `musician_id` INT NOT NULL,
+  `track_id` INT NOT NULL,
+  PRIMARY KEY (`musician_id`),
+  INDEX `track_idx` (`track_id` ASC),
+  CONSTRAINT `musician_fk`
+	FOREIGN KEY (`musician_id`)
+	REFERENCES `Musician` (`musician_id`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+  CONSTRAINT `track_fk2`
+	FOREIGN KEY (`track_id`)
+	REFERENCES `Track` (`t_id`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION);
+
+CREATE TABLE `feature` (
+  `track_id` INT NOT NULL,
+  `writer` INT NOT NULL,
+  `guest` INT NULL,
+  PRIMARY KEY (`track_id`),
+  INDEX `fk_feature_2_idx` (`writer` ASC),
+  INDEX `fk_feature_3_idx` (`guest` ASC),
+  CONSTRAINT `fk_feature_1`
+	FOREIGN KEY (`track_id`)
+	REFERENCES `Track` (`t_id`)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+  CONSTRAINT `fk_feature_2`
+	FOREIGN KEY (`writer`)
+	REFERENCES `Artist` (`artist_id`)
+	ON DELETE CASCADE
+	ON UPDATE NO ACTION,
+  CONSTRAINT `fk_feature_3`
+	FOREIGN KEY (`guest`)
+	REFERENCES `Artist` (`artist_id`)
+	ON DELETE CASCADE
+	ON UPDATE NO ACTION);
+
+CREATE TABLE `release` (
+  `album_id` INT NOT NULL,
+  `label_id` INT NOT NULL,
+  PRIMARY KEY (`album_id`),
+  INDEX `fk_release_2_idx` (`label_id` ASC),
+  CONSTRAINT `fk_release_1`
+	FOREIGN KEY (`album_id`)
+	REFERENCES `Album` (`alb_id`)
+	ON DELETE CASCADE
+	ON UPDATE NO ACTION,
+  CONSTRAINT `fk_release_2`
+	FOREIGN KEY (`label_id`)
+	REFERENCES `Label` (`label_id`)
+	ON DELETE CASCADE
+	ON UPDATE NO ACTION);
+
+CREATE TABLE `member_of` (
+  `musician_id` INT NOT NULL,
+  `artist_id` INT NOT NULL,
+  PRIMARY KEY (`musician_id`),
+  INDEX `fk_member_of_2_idx` (`artist_id` ASC),
+  CONSTRAINT `fk_member_of_1`
+	FOREIGN KEY (`musician_id`)
+	REFERENCES `Musician` (`musician_id`)
+	ON DELETE CASCADE
+	ON UPDATE NO ACTION,
+  CONSTRAINT `fk_member_of_2`
+	FOREIGN KEY (`artist_id`)
+	REFERENCES `Artist` (`artist_id`)
+	ON DELETE CASCADE
+	ON UPDATE NO ACTION);
